@@ -1,5 +1,4 @@
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -30,7 +29,6 @@ public class Excepciones {
             }
     }
 
-
     public void IOException() {
 
         Scanner sc = new Scanner(System.in);
@@ -48,8 +46,7 @@ public class Excepciones {
         }
     }
 
-
-    public void UncheckedException(){
+    public void ArrayIndexOutOfBoundsException(){
 
         try {
 
@@ -62,5 +59,7 @@ public class Excepciones {
         }
 
     }
+
+
 
 }

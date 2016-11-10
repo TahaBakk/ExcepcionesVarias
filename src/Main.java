@@ -37,7 +37,11 @@ public class Main {
                     System.out.println("");
                     break;
                 case 3:
-                    ex.UncheckedException();
+                    ex.ArrayIndexOutOfBoundsException();
+                    System.out.println("");
+                    break;
+                case 4:
+                    ex.ArrayIndexOutOfBoundsException();
                     System.out.println("");
                     break;
                 default:
