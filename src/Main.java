@@ -20,6 +20,7 @@ public class Main {
             System.out.println("1.Excepcion NumberFormatException");
             System.out.println("2.Excepcion IOException");
             System.out.println("3.Excepcion UncheckedException");
+            System.out.println("4.Excepcion ExcepcionesPropias");
 
 
             System.out.println("");
@@ -41,7 +42,7 @@ public class Main {
                     System.out.println("");
                     break;
                 case 4:
-                    ex.ArrayIndexOutOfBoundsException();
+                    ex.ExcepcionesPropias();
                     System.out.println("");
                     break;
                 default:
@@ -50,7 +51,7 @@ public class Main {
             }
             System.out.println("");
             System.out.println("");
-        } while (opcion != 4 && opcion<4);
+        } while (opcion != 5 && opcion<5);
 
         System.out.println("\nCerrando el sistema..");
 

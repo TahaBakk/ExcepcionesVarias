@@ -25,14 +25,14 @@ public class Excepciones {
 
             } catch (NumberFormatException nfe) {
                 //nfe.printStackTrace();
-                System.out.println("ERROR, no ha introducido un valor numérico" + nfe);
+                System.out.println("ERROR, no ha introducido un valor numérico  --->" + nfe);
             }
     }
 
     public void IOException() {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Introdueix una ruta (si introdueixes una ruta que no existeix salta la excepció)");
+        System.out.println("Introdueix una ruta (si no introdueixes una ruta salta la excepció)");
         File f1 = new File(sc.nextLine());
         FileWriter fichero;
 
@@ -42,7 +42,7 @@ public class Excepciones {
             fichero.write("Hola");
         } catch (IOException ioex) {
             // Aquí capturamos cualquier excepción IOException que se lance
-            System.out.println("ERROR, El fitxer o directori no existeix"+ioex);
+            System.out.println("ERROR, El fitxer o directori no existeix ------>"+ioex);
         }
     }
 
@@ -50,16 +50,43 @@ public class Excepciones {
 
         try {
 
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Introdueix una posicio del vector que vulguis veure (si introdueixes una posicio més gran a 6 salta la excepció)");
+            int num = sc.nextInt();
+
             int[] numerosPrimos = {1, 5, 10, 15, 20};
-            int undecimoPrimo = numerosPrimos[8];// al intentar entrar a una posicion que no existe
+            int undecimoPrimo = numerosPrimos[num];// al intentar entrar a una posicion que no existe
             System.out.println(undecimoPrimo);
 
         }catch (ArrayIndexOutOfBoundsException AIOBE){
-            System.out.println("ERROR, Intentas entrar a una posicion inexsistente"+AIOBE);
+            System.out.println("ERROR, Intentas entrar a una posicion del vector inexsistente -----> "+AIOBE);
         }
 
     }
 
+    public void ExcepcionesPropias(){
+
+        try{
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Introdueix un numero per multiplicar: ");
+            int num = sc.nextInt();
+            System.out.println("Introdueix un altre numero per multiplicar: (si introdueixes el \"1\" salta la excepcio) ");
+            int num2 = sc.nextInt();
+
+
+            divide(num,num2);
+        } catch(ExcepcionesPropias edu){
+                System.out.println(edu.getMessage());
+        }
+    }
+
+    public void divide(int a, int b) throws ExcepcionesPropias{
+        if(b==1){
+            throw new ExcepcionesPropias("ERROR, Dividir por uno no esta permitido, ");
+        } else {
+            System.out.println(a/b);
+        }
+    }
 
 
 }
